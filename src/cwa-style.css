@@ -1,11 +1,32 @@
+.weatherApp {
+  background-image: linear-gradient(
+    -225deg,
+    #473b7b 0%,
+    #3584a7 51%,
+    #30d2be 100%
+  );
+  max-width: 777px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 11px;
+}
+h1 {
+  color: #ffe8df;
+}
 .iconCurrentW {
   text-align: center;
   font-size: 150px;
+  color: #e6e6e6;
 }
 
 .temperature .temp {
   font-size: 80px;
+  color: #74d4c0;
 }
 .weatherDescription {
   font-size: 50px;
+  color: #74d4c0;
+}
+.info {
+  color: #ffe8df;
 }
