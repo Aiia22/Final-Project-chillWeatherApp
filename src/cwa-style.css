@@ -4,5 +4,8 @@
 }
 
 .temperature .temp {
-  font-size: 64px;
+  font-size: 80px;
+}
+.weatherDescription {
+  font-size: 50px;
 }
