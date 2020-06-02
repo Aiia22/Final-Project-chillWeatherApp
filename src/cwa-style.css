@@ -12,6 +12,7 @@
 }
 h1 {
   color: #ffe8df;
+  font-size: 55px;
 }
 .iconCurrentW {
   text-align: center;
@@ -21,11 +22,29 @@ h1 {
 
 .temperature .temp {
   font-size: 80px;
-  color: #74d4c0;
+  color: #99ddcf;
+}
+.unit {
+  color: #8dd3c5;
+  font-size: 15px;
+  position: relative;
+  top: -42px;
+  font-weight: bolder;
+}
+a {
+  color: #e6e6e6;
+  text-decoration: none;
+}
+a:hover {
+  color: #31cebd;
+  text-decoration: none;
+}
+a:focus {
+  color: #19cfbd;
 }
 .weatherDescription {
   font-size: 50px;
-  color: #74d4c0;
+  color: #99ddcf;
 }
 .info {
   color: #ffe8df;
