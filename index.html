@@ -9,16 +9,151 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
       integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
       crossorigin="anonymous"
-    />
+    /><script src="https://kit.fontawesome.com/8995d23b9c.js" crossorigin="anonymous"></script>
     <title>Document</title>
   </head>
   <body>
-    <div class="container">
-      <h1>
-        Hello World 🙌🏽!
-      </h1>
+    <div class="weatherApp">
+      <div class="container">
+      <div class="row">
+        <div class="col-6">
+          <form id="search-form" class="searchF">
+            <input type="search" placeholder="Type a city.." autofocus="off" class="BarStyle" id="searchBar" />
+            <input type="submit" value="Search" autofocus="off" class="BarStyle" id="submitCity" />
+          </form>
+          <h1>
+           City, 
+          </h1>
+          <hr/>
+          <div class="temperature">
+           <span id="currentTemp"class="temp">17</span>
+           <span class="unit"><a id="celcius" href="#"> °C </a> |<a id="fahr" href="#">°F</a>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="iconCurrentW">
+            <i class="fas fa-cloud-sun"></i>
+          </div> 
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-4">
+          <div id="currentDate" class="day"></div>
+          <br />
+          <div class="info">
+            <span class="precipitation"> Humidity: </span><span id="currentHumidity">10</span>%
+            <br />
+            <span class="wind">Wind: </span><span id="currentWind">5</span>km/h
+            <br />
+            <span class="feels"> Feels like: </span><span id="currentFeels">14</span>° C
+          </div>
+        </div>
+        <div class="col-8">
+          <img src="img/undraw_through_the_park_lxnl.svg"alt="Image park"width="500px"/>
+        </div>
+      </div>
+      <hr/>
+      <div class="week">
+        <div class="row">
+          <div class="col">
+            <div class="monday">
+              Mon
+            </div>
+            <br />
+            <div class="iM">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <br />
+            10/19° C
+          </div>
+          <div class="col">
+            <div class="tuesday">
+              Tue
+            </div>
+            <br />
+            <div class="iT">
+              <i class="fas fa-cloud"></i>
+            </div>
+            <br />
+            11/19° C
+          </div>
+          <div class="col">
+            <div class="wednesday">
+              Wed
+            </div>
+            <br />
+            <div class="iW">
+              <i class="fas fa-cloud-sun"></i>
+            </div>
+            <br />
+            9/22° C
+          </div>
+          <div class="col">
+            <div class="thursday">
+              Thu
+            </div>
+            <br />
+            <div class="iTh">
+              <i class="fas fa-sun"></i>
+            </div>
+            <br />
+            11/20° C
+          </div>
+          <div class="col">
+            <div class="friday">
+              Fri
+            </div>
+            <br />
+            <div class="iF">
+              <i class="fas fa-cloud-showers-heavy"></i>
+            </div>
+            <br />
+            9/17° C
+          </div>
+          <div class="col">
+            <div class="saturday">
+              Sat
+            </div>
+            <br />
+            <div class="iSa">
+              <i class="fas fa-cloud-showers-heavy"></i>
+            </div>
+            <br />
+            8/17° C
+          </div>
+          <div class="col">
+            <div class="sunday">
+              Sun
+            </div>
+            <br />
+            <div class="iSu">
+              <i class="fas fa-cloud-sun-rain"></i>
+            </div>
+            <br />
+            8/16° C
+          </div>
+        </div>
+      </div>
+
+
+
+  
+    
+
+
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
     </div>
-    <a href="" class="btn btn-primary">Click me</a>
   </body>
   <script src="src/cwa-app.js"></script>
 </html>

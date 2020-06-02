@@ -1,4 +1,8 @@
-h1 {
-  color: #be7575;
+.iconCurrentW {
   text-align: center;
+  font-size: 150px;
+}
+
+.temperature .temp {
+  font-size: 64px;
 }
