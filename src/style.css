@@ -19,7 +19,7 @@
   border-radius: 5px;
   box-shadow: 7px 5px 5px rgba(0, 0, 0, 0.3);
   border-style: none;
-  background-color: #ecfbfc;
+  background-color: #fee8df;
   color: #45437f;
   cursor: pointer;
   text-align: left;
@@ -34,7 +34,7 @@
 }
 #submitCity:hover {
   background-color: #32bfb9;
-  color: #e8f0fe;
+  color: #fee8df;
 }
 
 h1 {
