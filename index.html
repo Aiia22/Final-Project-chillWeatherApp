@@ -17,26 +17,26 @@
     <title>Chill Weather App</title>
   </head>
   <body>
-    <div class="weatherApp">
+    <div class="weatherAppWrapper">
       <div class="container">
+        <form id="search-form" class="searchF">
+          <input
+            type="search"
+            placeholder="Type a city.."
+            autofocus="off"
+            class="BarStyle"
+            id="searchBar"
+          />
+          <input
+            type="submit"
+            value="Search"
+            autofocus="off"
+            class="BarStyle"
+            id="submitCity"
+          />
+        </form>
         <div class="row">
           <div class="col-6">
-            <form id="search-form" class="searchF">
-              <input
-                type="search"
-                placeholder="Type a city.."
-                autofocus="off"
-                class="BarStyle"
-                id="searchBar"
-              />
-              <input
-                type="submit"
-                value="Search"
-                autofocus="off"
-                class="BarStyle"
-                id="submitCity"
-              />
-            </form>
             <h1>
               City
             </h1>
@@ -63,18 +63,20 @@
             <div id="currentDate" class="day"></div>
             <br />
             <div class="info">
-              <em class="precipitation"> Humidity: </em
+              <span class="precipitation"> Humidity: </span
               ><span id="currentHumidity">10</span>%
               <br />
-              <em class="wind">Wind: </em><span id="currentWind">5</span>km/h
+              <span class="wind">Wind: </span
+              ><span id="currentWind">5</span>km/h
               <br />
-              <em class="feels"> Feels like: </em
+              <span class="feels"> Feels like: </span
               ><span id="currentFeels">14</span> °C
               <br />
-              <em class="sunrise">Sunrise: </em
+              <span class="sunrise">Sunrise: </span
               ><span id="sunriseTime">06:10</span>
               <br />
-              <em class="sunset">Sunset: </em><span id="sunsetTime">22:10</span>
+              <span class="sunset">Sunset: </span
+              ><span id="sunsetTime">22:10</span>
             </div>
           </div>
           <div class="col-8">
@@ -168,6 +170,14 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="openSource">
+        <a
+          href="https://github.com/Aiia22/Final-Project-chillWeatherApp"
+          target="_blank"
+        >
+          Open-source code</a
+        ><span>, by Tatiana Leclerc</span>
       </div>
     </div>
   </body>
