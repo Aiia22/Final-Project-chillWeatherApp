@@ -2,14 +2,6 @@
 
 function formatDate(timestamp) {
   let date = new Date(timestamp);
-  let hours = date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
   let dayArray = [
     "Sunday",
     "Monday",
@@ -20,7 +12,7 @@ function formatDate(timestamp) {
     "Saturday",
   ];
   let day = dayArray[date.getDay()];
-  return `${day}, ${hours}:${minutes}`;
+  return `${day}, ${formatTime(timestamp)}`;
 }
 function formatTime(timestamp) {
   let date = new Date(timestamp);
@@ -50,8 +42,9 @@ function displayCurrentWeather(response) {
   let sunsetElement = document.querySelector("#sunsetTime");
   let dateElement = document.querySelector("#currentDate");
   let iconElement = document.querySelector("#iconW");
+  celsiusTemp = response.data.main.temp;
   cityElement.innerHTML = response.data.name;
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
   descriptionElement.innerHTML = response.data.weather[0].description;
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
@@ -66,7 +59,7 @@ function displayCurrentWeather(response) {
 }
 //Display current weather & date by default
 let apiOpenWeatherKey = "2a64b8c658dc2d165dbcbfd51a3372f7";
-let apiOpenWeatherCityUrl = `https://api.openweathermap.org/data/2.5/weather?q=Dublin&appid=${apiOpenWeatherKey}&units=metric`;
+let apiOpenWeatherCityUrl = `https://api.openweathermap.org/data/2.5/weather?q=Paris&appid=${apiOpenWeatherKey}&units=metric`;
 axios.get(apiOpenWeatherCityUrl).then(displayCurrentWeather);
 
 //Display current weather & date by current location
@@ -100,4 +93,31 @@ let form = document.querySelector("#search-form ");
 form.addEventListener("submit", searchCity);
 
 //Convert units
+
+function displayFahrUnit(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#currentTemp");
+
+  celsiusUnit.classList.remove("active");
+  fahrUnit.classList.add("active");
+  let fahrTemp = (celsiusTemp * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrTemp);
+}
+
+function displayCelsiusUnit(event) {
+  event.preventDefault();
+  celsiusUnit.classList.add("active");
+  fahrUnit.classList.remove("active");
+  let temperatureElement = document.querySelector("#currentTemp");
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+}
+
+let celsiusTemp = null;
+
+let fahrUnit = document.querySelector("#fahr");
+fahrUnit.addEventListener("click", displayFahrUnit);
+
+let celsiusUnit = document.querySelector("#celsius");
+celsiusUnit.addEventListener("click", displayCelsiusUnit);
+
 //Forecast
