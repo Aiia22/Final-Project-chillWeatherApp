@@ -57,7 +57,7 @@ function displayCurrentWeather(response) {
 //Display current weather & date by default
 let apiOpenWeatherKey = "2a64b8c658dc2d165dbcbfd51a3372f7";
 let apiOpenWeatherCityUrl = `https://api.openweathermap.org/data/2.5/weather?q=Dublin&appid=${apiOpenWeatherKey}&units=metric`;
-axios.get(apiOpenWeatherCityUrl).then(displayDefaultWeather);
+axios.get(apiOpenWeatherCityUrl).then(displayCurrentWeather);
 
 //Display current weather & date by current location
 function retrievePosition(position) {
