@@ -1,4 +1,3 @@
-//display current weather & date by city name search
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -33,9 +32,50 @@ function formatTime(timestamp) {
   }
   return `${hours}:${minutes}`;
 }
+//Display current weather & date by default
+
+//Display current weather & date by current location
+
+function showWeather(response) {
+  event.preventDefault();
+  let cityElement = document.querySelector("#currentCity");
+  let temperatureElement = document.querySelector("#currentTemp");
+  let descriptionElement = document.querySelector("#description");
+  let humidityElement = document.querySelector("#currentHumidity");
+  let feelsLikeElement = document.querySelector("#currentFeeling");
+  let windElement = document.querySelector("#currentWind");
+  let sunriseElement = document.querySelector("#sunriseTime");
+  let sunsetElement = document.querySelector("#sunsetTime");
+  let dateElement = document.querySelector("#currentDate");
+  cityElement.innerHTML = response.data.name;
+  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  humidityElement.innerHTML = response.data.main.humidity;
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  sunriseElement.innerHTML = formatTime(response.data.sys.sunrise * 1000);
+  sunsetElement.innerHTML = formatTime(response.data.sys.sunset * 1000);
+}
+function retrievePosition(position) {
+  console.log(position);
+  let apiOpenWeatherKey = "2a64b8c658dc2d165dbcbfd51a3372f7";
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let apiOpenWeatherGeoUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiOpenWeatherKey}&units=metric`;
+  axios.get(apiOpenWeatherGeoUrl).then(showWeather);
+}
+
+function currentGeolocation(position) {
+  navigator.geolocation.getCurrentPosition(retrievePosition);
+}
+
+let link = document.querySelector("#currentLocation");
+link.addEventListener("click", currentGeolocation);
+
+//Display current weather & date by city name search
 
 function displayCurrentWeather(response) {
-  console.log(response.data);
   let cityElement = document.querySelector("#currentCity");
   let temperatureElement = document.querySelector("#currentTemp");
   let descriptionElement = document.querySelector("#description");
@@ -67,4 +107,5 @@ function searchCity() {
 let form = document.querySelector("#search-form ");
 form.addEventListener("submit", searchCity);
 
-//display current weather & date by default (current location)
+//Convert units
+//Forecast

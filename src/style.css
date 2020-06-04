@@ -15,16 +15,25 @@
   padding: 33px;
   color: #fee8df;
 }
+
 .BarStyle {
+  background-color: #fee8df;
   border-radius: 5px;
   box-shadow: 7px 5px 5px rgba(0, 0, 0, 0.3);
   border-style: none;
-  background-color: #fee8df;
   color: #45437f;
-  cursor: pointer;
   text-align: left;
-  transition: 150ms ease-in-out;
   padding: 5px;
+  cursor: pointer;
+  transition: 150ms ease-in-out;
+}
+.iconLocation {
+  font-size: 28px;
+  position: relative;
+  top: 4px;
+  left: 11px;
+  cursor: pointer;
+  transition: 150ms ease-in-out;
 }
 
 ::placeholder {
@@ -35,6 +44,9 @@
 #submitCity:hover {
   background-color: #32bfb9;
   color: #fee8df;
+}
+.iconLocation:hover {
+  color: #32bfb9;
 }
 
 h1 {
