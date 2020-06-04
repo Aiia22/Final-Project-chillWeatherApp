@@ -1,3 +1,5 @@
+//Format date and time(s)
+
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
@@ -32,9 +34,12 @@ function formatTime(timestamp) {
   }
   return `${hours}:${minutes}`;
 }
+//Format icon(s)
 
+// Current weather
 function displayCurrentWeather(response) {
   event.preventDefault();
+  console.log(response.data);
   let cityElement = document.querySelector("#currentCity");
   let temperatureElement = document.querySelector("#currentTemp");
   let descriptionElement = document.querySelector("#description");
@@ -44,6 +49,7 @@ function displayCurrentWeather(response) {
   let sunriseElement = document.querySelector("#sunriseTime");
   let sunsetElement = document.querySelector("#sunsetTime");
   let dateElement = document.querySelector("#currentDate");
+  let iconElement = document.querySelector("#iconW");
   cityElement.innerHTML = response.data.name;
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   descriptionElement.innerHTML = response.data.weather[0].description;
@@ -53,6 +59,10 @@ function displayCurrentWeather(response) {
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   sunriseElement.innerHTML = formatTime(response.data.sys.sunrise * 1000);
   sunsetElement.innerHTML = formatTime(response.data.sys.sunset * 1000);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 //Display current weather & date by default
 let apiOpenWeatherKey = "2a64b8c658dc2d165dbcbfd51a3372f7";
