@@ -57,6 +57,9 @@ h1 {
 .temperature .weatherDescription {
   font-size: 33px;
 }
+.weatherDescription::first-letter {
+  text-transform: capitalize;
+}
 .unit {
   color: #8dd3c5;
   font-size: 15px;

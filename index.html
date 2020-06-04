@@ -14,6 +14,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="src/style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <title>Chill Weather App</title>
   </head>
   <body>
@@ -37,19 +38,17 @@
         </form>
         <div class="row">
           <div class="col-6">
-            <h1>
-              City
-            </h1>
-            <div class="date" id="currentDate">Sunday, 13:10</div>
+            <h1 id="currentCity"></h1>
+            <div class="date" id="currentDate"></div>
             <hr />
             <div class="temperature">
-              <span id="currentTemp" class="temp">17</span>
+              <span id="currentTemp" class="temp"></span>
               <small class="unit"
                 ><a id="celcius" href="#"> °C </a> |<a id="fahr" href="#"
                   >°F</a
                 ></small
               >
-              <div class="weatherDescription" id="description">Clouds</div>
+              <div class="weatherDescription" id="description"></div>
             </div>
           </div>
           <div class="col-6">
@@ -64,19 +63,17 @@
             <br />
             <div class="info">
               <span class="precipitation"> Humidity: </span
-              ><span id="currentHumidity">10</span>%
+              ><span id="currentHumidity"></span>%
               <br />
-              <span class="wind">Wind: </span
-              ><span id="currentWind">5</span>km/h
+              <span class="wind">Wind: </span><span id="currentWind"></span>km/h
               <br />
-              <span class="feels"> Feels like: </span
-              ><span id="currentFeels">14</span> °C
+              <span class="feeling"> Feels like: </span
+              ><span id="currentFeeling"></span> °C
               <br />
               <span class="sunrise">Sunrise: </span
-              ><span id="sunriseTime">06:10</span>
+              ><span id="sunriseTime"></span>
               <br />
-              <span class="sunset">Sunset: </span
-              ><span id="sunsetTime">22:10</span>
+              <span class="sunset">Sunset: </span><span id="sunsetTime"></span>
             </div>
           </div>
           <div class="col-8">
