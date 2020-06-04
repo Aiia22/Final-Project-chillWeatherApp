@@ -32,35 +32,8 @@ function formatTime(timestamp) {
   }
   return `${hours}:${minutes}`;
 }
-//Display current weather & date by default
-function displayDefaultWeather(response) {
-  let cityElement = document.querySelector("#currentCity");
-  let temperatureElement = document.querySelector("#currentTemp");
-  let descriptionElement = document.querySelector("#description");
-  let humidityElement = document.querySelector("#currentHumidity");
-  let feelsLikeElement = document.querySelector("#currentFeeling");
-  let windElement = document.querySelector("#currentWind");
-  let sunriseElement = document.querySelector("#sunriseTime");
-  let sunsetElement = document.querySelector("#sunsetTime");
-  let dateElement = document.querySelector("#currentDate");
-  cityElement.innerHTML = response.data.name;
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
-  descriptionElement.innerHTML = response.data.weather[0].description;
-  humidityElement.innerHTML = response.data.main.humidity;
-  windElement.innerHTML = Math.round(response.data.wind.speed);
-  feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  sunriseElement.innerHTML = formatTime(response.data.sys.sunrise * 1000);
-  sunsetElement.innerHTML = formatTime(response.data.sys.sunset * 1000);
-}
 
-let apiOpenWeatherKey = "2a64b8c658dc2d165dbcbfd51a3372f7";
-let apiOpenWeatherCityUrl = `https://api.openweathermap.org/data/2.5/weather?q=Dublin&appid=${apiOpenWeatherKey}&units=metric`;
-axios.get(apiOpenWeatherCityUrl).then(displayDefaultWeather);
-
-//Display current weather & date by current location
-
-function showWeather(response) {
+function displayCurrentWeather(response) {
   event.preventDefault();
   let cityElement = document.querySelector("#currentCity");
   let temperatureElement = document.querySelector("#currentTemp");
@@ -81,13 +54,19 @@ function showWeather(response) {
   sunriseElement.innerHTML = formatTime(response.data.sys.sunrise * 1000);
   sunsetElement.innerHTML = formatTime(response.data.sys.sunset * 1000);
 }
+//Display current weather & date by default
+let apiOpenWeatherKey = "2a64b8c658dc2d165dbcbfd51a3372f7";
+let apiOpenWeatherCityUrl = `https://api.openweathermap.org/data/2.5/weather?q=Dublin&appid=${apiOpenWeatherKey}&units=metric`;
+axios.get(apiOpenWeatherCityUrl).then(displayDefaultWeather);
+
+//Display current weather & date by current location
 function retrievePosition(position) {
   console.log(position);
   let apiOpenWeatherKey = "2a64b8c658dc2d165dbcbfd51a3372f7";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let apiOpenWeatherGeoUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiOpenWeatherKey}&units=metric`;
-  axios.get(apiOpenWeatherGeoUrl).then(showWeather);
+  axios.get(apiOpenWeatherGeoUrl).then(displayCurrentWeather);
 }
 
 function currentGeolocation(position) {
@@ -98,27 +77,6 @@ let link = document.querySelector("#currentLocation");
 link.addEventListener("click", currentGeolocation);
 
 //Display current weather & date by city name search
-
-function displayCurrentWeather(response) {
-  let cityElement = document.querySelector("#currentCity");
-  let temperatureElement = document.querySelector("#currentTemp");
-  let descriptionElement = document.querySelector("#description");
-  let humidityElement = document.querySelector("#currentHumidity");
-  let feelsLikeElement = document.querySelector("#currentFeeling");
-  let windElement = document.querySelector("#currentWind");
-  let sunriseElement = document.querySelector("#sunriseTime");
-  let sunsetElement = document.querySelector("#sunsetTime");
-  let dateElement = document.querySelector("#currentDate");
-  cityElement.innerHTML = response.data.name;
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
-  descriptionElement.innerHTML = response.data.weather[0].description;
-  humidityElement.innerHTML = response.data.main.humidity;
-  windElement.innerHTML = Math.round(response.data.wind.speed);
-  feelsLikeElement.innerHTML = Math.round(response.data.main.feels_like);
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
-  sunriseElement.innerHTML = formatTime(response.data.sys.sunrise * 1000);
-  sunsetElement.innerHTML = formatTime(response.data.sys.sunset * 1000);
-}
 
 function searchCity() {
   event.preventDefault();
