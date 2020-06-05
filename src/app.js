@@ -31,7 +31,6 @@ function formatTime(timestamp) {
 // Current weather
 function displayCurrentWeather(response) {
   event.preventDefault();
-  console.log(response.data);
   let cityElement = document.querySelector("#currentCity");
   let temperatureElement = document.querySelector("#currentTemp");
   let descriptionElement = document.querySelector("#description");
@@ -64,7 +63,6 @@ axios.get(apiOpenWeatherCityUrl).then(displayCurrentWeather);
 
 //Display current weather & date by current location
 function retrievePosition(position) {
-  console.log(position);
   let apiOpenWeatherKey = "2a64b8c658dc2d165dbcbfd51a3372f7";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
