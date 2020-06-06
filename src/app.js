@@ -167,4 +167,4 @@ form.addEventListener("submit", handleSubmit);
 let link = document.querySelector("#currentLocation");
 link.addEventListener("click", currentGeolocation);
 
-search("Paris");
+search("Tauranga");
