@@ -55,6 +55,11 @@ function displayCelsiusUnit(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemp);
 }
 
+//change icons weather
+function replaceIconWeather(response) {
+  console.log(response);
+}
+
 // Display weather
 
 function displayCurrentWeather(response) {
@@ -79,13 +84,12 @@ function displayCurrentWeather(response) {
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
   sunriseElement.innerHTML = formatTime(response.data.sys.sunrise * 1000);
   sunsetElement.innerHTML = formatTime(response.data.sys.sunset * 1000);
-  iconElement.setAttribute(
-    "src",
-    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-  );
+  iconElement.setAttribute("src", `src/${response.data.weather[0].icon}.png`);
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 //Display forecast
+
 function displayForecast(response) {
   let forecastElement = document.querySelector("#weekForecast");
   forecastElement.innerHTML = null;
@@ -97,9 +101,7 @@ function displayForecast(response) {
   <div class="day1" id="dayOne">
    ${formatDateForecast(forecast.dt * 1000)}
   </div>
-  <img src="http://openweathermap.org/img/wn/${
-    forecast.weather[0].icon
-  }@2x.png"/>
+  <img src="src/${forecast.weather[0].icon}.png"class="iWF"/>
   <div class="forecastTemperature">
   <strong>${Math.round(forecast.temp.max)} °</strong>${Math.round(
       forecast.temp.min
