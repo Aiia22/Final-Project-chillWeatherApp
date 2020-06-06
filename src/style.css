@@ -87,6 +87,12 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
+a.active {
+  color: #31cebd;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 a:hover {
   color: #31cebd;
   text-decoration: none;

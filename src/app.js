@@ -55,11 +55,6 @@ function displayCelsiusUnit(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemp);
 }
 
-//change icons weather
-function replaceIconWeather(response) {
-  console.log(response);
-}
-
 // Display weather
 
 function displayCurrentWeather(response) {
@@ -103,9 +98,9 @@ function displayForecast(response) {
   </div>
   <img src="src/${forecast.weather[0].icon}.png"class="iWF"/>
   <div class="forecastTemperature">
-  <strong>${Math.round(forecast.temp.max)} °</strong>${Math.round(
+  <strong>${Math.round(forecast.temp.max)}° </strong>${Math.round(
       forecast.temp.min
-    )} °</div>
+    )}°</div>
   </div>
   `;
   }
