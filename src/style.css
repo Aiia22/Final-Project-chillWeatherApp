@@ -63,7 +63,7 @@ h1 {
 #iconW {
   display: block;
   margin: 0 auto;
-  margin-top: 75px;
+  margin-top: 70px;
 
   width: 200px;
 }
@@ -76,7 +76,8 @@ h1 {
   font-size: 80px;
 }
 .temperature .weatherDescription {
-  font-size: 33px;
+  font-size: 28px;
+  margin-top: 0;
 }
 .weatherDescription::first-letter {
   text-transform: capitalize;
