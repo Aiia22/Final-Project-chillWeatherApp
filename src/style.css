@@ -116,6 +116,9 @@ hr {
   font-size: 15px;
   font-weight: bolder;
 }
+.iWF {
+  width: 44px;
+}
 .openSource {
   text-align: center;
   padding: 11px;
@@ -125,6 +128,166 @@ hr {
   color: #3398ac;
   cursor: pointer;
 }
-.iWF {
-  width: 44px;
+
+@media (max-width: 760px) {
+  /* put all rules for less than or equal to 960 pixels here */
+  #iconW {
+    width: 150px;
+  }
+  .imgPark {
+    max-width: 211px;
+  }
+
+  .info {
+    font-size: 13px;
+  }
+  .week {
+    font-size: 11px;
+  }
 }
+
+@media (max-width: 485px) {
+  /*  all rules for less than or equal to 960 pixels here */
+
+  .weatherAppWrapper {
+    max-width: none;
+    background-image: linear-gradient(
+      -225deg,
+      #473b7b 0%,
+      #3584a7 51%,
+      #30d2be 100%
+    );
+  }
+  .container {
+    border-radius: none;
+  }
+  #iconW {
+    width: 150px;
+  }
+  .imgPark {
+    max-width: 211px;
+  }
+
+  .info {
+    font-size: 9px;
+  }
+  .week {
+    font-size: 7px;
+  }
+  .iWF {
+    max-width: 25px;
+  }
+  .openSource {
+    text-align: center;
+    padding: 0px;
+    padding-top: 5px;
+    margin: 0;
+    color: #45437f;
+  }
+  .openSource a {
+    color: #fee8df;
+    cursor: pointer;
+  }
+}
+@media (max-width: 395px) {
+  /*  all rules for less than or equal to 960 pixels here */
+
+  .weatherAppWrapper {
+    max-width: none;
+    background-image: linear-gradient(
+      -225deg,
+      #473b7b 0%,
+      #3584a7 51%,
+      #30d2be 100%
+    );
+  }
+  .container {
+    border-radius: none;
+  }
+  #iconW {
+    width: 125px;
+  }
+  #currentTemp {
+    font-size: 70px;
+  }
+
+  .imgPark {
+    max-width: 190px;
+  }
+
+  .info {
+    font-size: 9px;
+  }
+  .week {
+    font-size: 5px;
+  }
+  .iWF {
+    max-width: 25px;
+  }
+  .openSource {
+    text-align: center;
+    padding: 0px;
+    padding-top: 5px;
+    margin: 0;
+    color: #45437f;
+  }
+  .openSource a {
+    color: #fee8df;
+    cursor: pointer;
+  }
+}
+@media (max-width: 350px) {
+  /*  all rules for less than or equal to 960 pixels here */
+
+  .weatherAppWrapper {
+    max-width: none;
+    background-image: linear-gradient(
+      -225deg,
+      #473b7b 0%,
+      #3584a7 51%,
+      #30d2be 100%
+    );
+  }
+  .container {
+    border-radius: none;
+  }
+  .searchF {
+    padding: 5px;
+    font-size: 11px;
+  }
+  #iconW {
+    width: 110px;
+  }
+  #currentTemp {
+    font-size: 50px;
+    position: relative;
+    top: -10px;
+  }
+
+  .imgPark {
+    max-width: 170px;
+  }
+
+  .info {
+    font-size: 8px;
+  }
+  .week {
+    font-size: 3px;
+  }
+  .iWF {
+    max-width: 20px;
+  }
+  .openSource {
+    text-align: center;
+    padding: 0px;
+    padding-top: 5px;
+    margin-bottom: 0;
+    color: #45437f;
+  }
+  .openSource a {
+    color: #fee8df;
+    cursor: pointer;
+  }
+}
+
+/* down to 318px */
