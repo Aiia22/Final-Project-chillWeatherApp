@@ -1,4 +1,4 @@
-//////////Functions
+//Functions
 
 //Format date and time(s)
 function formatDateForecast(timestamp) {
@@ -34,6 +34,7 @@ function formatTime(timestamp) {
   }
   return `${hours}:${minutes}`;
 }
+
 //Convert units
 
 function displayFahrUnit(event) {
@@ -86,26 +87,26 @@ function displayCurrentWeather(response) {
 
 //Display forecast
 function displayForecast(response) {
-  //let forecastElement = document.querySelector("#weekForecast");
-  //forecastElement.innerHTML = null;
-  //let forecast = null;
-  //for (let index = 0; index < 6; index++) {
-  //forecast = response.data.daily[index];
-  //forecastElement.innerHTML += `
-  //<div class="col-2">
-  //<div class="col-2">
-  //<div class="day1" id="dayOne">
-  // ${ formatDateForecast }
-  // </div>
-  //<img src="#" id="iconWF" />
-  //<div class="forecastTemperature">
-  //<strong>
-  //${ Math.round(response.data.daily.temp.max) } °
-  //</strong>
-  //${ Math.round(response.data.daily.temp.min) } °
-  //</div>
-  //</div>
-  //`;}
+  let forecastElement = document.querySelector("#weekForecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.daily[index];
+    forecastElement.innerHTML += `
+  <div class="col-2">
+  <div class="day1" id="dayOne">
+   ${formatDateForecast(forecast.dt * 1000)}
+  </div>
+  <img src="http://openweathermap.org/img/wn/${
+    forecast.weather[0].icon
+  }@2x.png"/>
+  <div class="forecastTemperature">
+  <strong>${Math.round(forecast.temp.max)} °</strong>${Math.round(
+      forecast.temp.min
+    )} °</div>
+  </div>
+  `;
+  }
 }
 
 //Get weather from current location
@@ -118,7 +119,7 @@ function retrievePosition(position) {
   let apiOpenWeatherGeoUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiOpenWeatherKey}&units=metric`;
   axios.get(apiOpenWeatherGeoUrl).then(displayCurrentWeather);
 
-  // 2. get lat and lon for the 7 days forecast
+  // 2. get the 7 days forecast for lat and lon
   displayForecastWeather(lat, lon);
 }
 
@@ -127,10 +128,8 @@ function currentGeolocation(position) {
 }
 
 //Get weather by city name
-
 function search(city) {
   let apiOpenWeatherCityUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiOpenWeatherKey}&units=metric`;
-  //Axios.get(apiOpenWeatherCityUrl).then(displayCurrentWeather);
   axios.get(apiOpenWeatherCityUrl).then(function (response) {
     //This makes a request to the API
     displayCurrentWeather(response);
@@ -141,6 +140,7 @@ function search(city) {
     displayForecastWeather(lat, lon);
   });
 }
+
 //Get the 7 days forecast
 function displayForecastWeather(lat, lon) {
   let apiOpenWeatherFUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly&appid=${apiOpenWeatherKey}&units=metric`;
@@ -153,7 +153,7 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-////////////ariables
+//Variables
 let apiOpenWeatherKey = "2a64b8c658dc2d165dbcbfd51a3372f7";
 
 let celsiusTemp = null;
