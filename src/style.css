@@ -63,7 +63,7 @@ h1 {
 #iconW {
   display: block;
   margin: 0 auto;
-  margin-top: 70px;
+  margin-top: 60px;
 
   width: 200px;
 }
@@ -73,10 +73,10 @@ h1 {
   color: #99ddcf;
 }
 .temperature .temp {
-  font-size: 80px;
+  font-size: 70px;
 }
 .temperature .weatherDescription {
-  font-size: 28px;
+  font-size: 25px;
   margin-top: 0;
 }
 .weatherDescription::first-letter {
@@ -86,7 +86,7 @@ h1 {
   color: #8dd3c5;
   font-size: 15px;
   position: relative;
-  top: -44px;
+  top: -40px;
   font-weight: bolder;
 }
 a {
