@@ -136,6 +136,7 @@ hr {
   text-align: center;
   padding: 5px;
   color: #45437f;
+  margin-bottom: 5px;
 }
 .openSource a {
   color: #3398ac;
@@ -178,28 +179,27 @@ hr {
     border-radius: none;
   }
   #iconW {
-    width: 150px;
+    width: 140px;
   }
   h1 {
     font-size: 35px;
   }
   .imgPark {
-    max-width: 211px;
+    max-width: 190px;
   }
 
   .info {
-    font-size: 9px;
+    font-size: 12px;
   }
   .week {
-    font-size: 7px;
+    font-size: 14px;
   }
   .iWF {
     max-width: 25px;
   }
   .openSource {
     text-align: center;
-    padding: 0px;
-    padding-top: 5px;
+    padding: 8px;
     margin: 0;
     color: #45437f;
   }
@@ -211,7 +211,7 @@ hr {
 @media (max-width: 395px) {
   /*  all rules for less than or equal to 960 pixels here */
 
-  .weatherAppWrapper {
+  .body {
     max-width: none;
     background-image: linear-gradient(
       -225deg,
@@ -234,22 +234,21 @@ hr {
   }
 
   .imgPark {
-    max-width: 190px;
+    max-width: 150px;
   }
 
   .info {
-    font-size: 9px;
+    font-size: 10px;
   }
   .week {
-    font-size: 5px;
+    font-size: 12px;
   }
   .iWF {
-    max-width: 25px;
+    max-width: 22px;
   }
   .openSource {
     text-align: center;
-    padding: 0px;
-    padding-top: 5px;
+    padding: 8px;
     margin: 0;
     color: #45437f;
   }
@@ -261,7 +260,7 @@ hr {
 @media (max-width: 350px) {
   /*  all rules for less than or equal to 960 pixels here */
 
-  .weatherAppWrapper {
+  .body {
     max-width: none;
     background-image: linear-gradient(
       -225deg,
@@ -278,7 +277,7 @@ hr {
     font-size: 11px;
   }
   h1 {
-    font-size: 25px;
+    font-size: 20px;
   }
   #iconW {
     width: 110px;
@@ -294,20 +293,19 @@ hr {
   }
 
   .info {
-    font-size: 8px;
+    font-size: 9px;
   }
   .week {
-    font-size: 3px;
+    font-size: 10px;
   }
   .iWF {
-    max-width: 20px;
+    max-width: 18px;
   }
   .openSource {
     text-align: center;
-    padding: 0px;
-    padding-top: 5px;
-    margin-bottom: 0;
+    padding: 8px;
     color: #45437f;
+    padding-bottom: 5px;
   }
   .openSource a {
     color: #fee8df;

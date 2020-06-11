@@ -98,9 +98,9 @@ function displayForecast(response) {
   </div>
   <img src="src/${forecast.weather[0].icon}.png"class="iWF"/>
   <div class="forecastTemperature">
-  <strong>${Math.round(forecast.temp.max)}° </strong>${Math.round(
+  <strong>${Math.round(forecast.temp.max)}° </strong><span>${Math.round(
       forecast.temp.min
-    )}°</div>
+    )}°</span></div>
   </div>
   `;
   }
